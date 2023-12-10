@@ -33,6 +33,9 @@ public class DecemberSolution {
         return sum;
         // todo: successfully completed
     }
+
+
+
     // TODO: 07/12/23
 
         public String largestOddNumber(String num) {
@@ -43,6 +46,21 @@ public class DecemberSolution {
             return "";
         }
 
+    // TODO: 10/12/23
+    public int[][] transpose(int[][] matrix) {
+        int row=matrix.length;
+        int col=matrix[0].length;
+        int arr[][]=new int[col][row];
+        for(int i=0;i<col;i++)
+        {
+            for(int j=0;j<row;j++)
+            {
+                arr[i][j]=matrix[j][i];
+            }
+        }
+        return arr;
+    }
+    // todo:Successfully completed
 
     public static void main(String[] args) {
     }
