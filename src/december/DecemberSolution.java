@@ -62,6 +62,41 @@ public class DecemberSolution {
     }
     // todo:Successfully completed
 
+    // TODO: 11/12/23
+        public int findSpecialInteger(int[] arr) {
+            int n = arr.length;
+            int quarter = n / 4;
+
+            for (int i = 0; i < n - quarter; i++) {
+                if (arr[i] == arr[i + quarter]) {
+                    return arr[i];
+                }
+            }
+
+            return -1;
+        }
+    // TODO:Successfully completed
+
+
+    // TODO: 12/12/23
+
+    public int maxProduct(int[] nums) {
+        int firstMax = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+
+        for (int num : nums) {
+            if (num >= firstMax) {
+                secondMax = firstMax;
+                firstMax = num;
+            } else if (num > secondMax) {
+                secondMax = num;
+            }
+        }
+
+        return (firstMax - 1) * (secondMax - 1);
+    }
+
+    //todo: success
     public static void main(String[] args) {
     }
 }
