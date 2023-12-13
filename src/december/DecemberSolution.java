@@ -97,6 +97,45 @@ public class DecemberSolution {
     }
 
     //todo: success
+
+    //todo: 13.12.2023
+        public int numSpecial(int[][] mat) {
+            int m = mat.length;
+            int n = mat[0].length;
+            int count = 0;
+
+            // Count the number of special positions
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (mat[i][j] == 1) {
+                        // Check the entire row for 1
+                        boolean isRowSpecial = true;
+                        for (int k = 0; k < n; k++) {
+                            if (k != j && mat[i][k] == 1) {
+                                isRowSpecial = false;
+                                break;
+                            }
+                        }
+
+                        // Check the entire column for 1
+                        boolean isColSpecial = true;
+                        for (int k = 0; k < m; k++) {
+                            if (k != i && mat[k][j] == 1) {
+                                isColSpecial = false;
+                                break;
+                            }
+                        }
+                        // Increment count if both row and column are special
+                        if (isRowSpecial && isColSpecial) {
+                            count++;
+                        }
+                    }
+                }
+            }
+
+            return count;
+        }
+        //todo:success
     public static void main(String[] args) {
     }
 }
